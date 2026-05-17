@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lexi's Bridal Shower</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -34,21 +33,20 @@
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 2rem;
-      white-space: nowrap;
+      gap: 1.5rem;
+      align-items: center;
     }
 
-    .links a {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #6ab0e0;
-      text-decoration: none;
-      letter-spacing: 0.01em;
+    .links a img {
+      height: 6vh;
+      width: auto;
+      display: block;
+      opacity: 1;
+      transition: opacity 0.15s;
     }
 
-    .links a:hover {
-      text-decoration: underline;
+    .links a:hover img {
+      opacity: 0.75;
     }
   </style>
 </head>
@@ -56,10 +54,13 @@
   <div class="card">
     <img class="invitation-img" src="images/80percent.png" alt="Lexi's Bridal Shower Invitation" />
     <nav class="links">
-      <a href="#placeholder">RSVP</a>
-      <a href="registry.html">Registry</a>
+      <a href="#placeholder"><img src="images/RSVPbutton.png" alt="RSVP" /></a>
+      <a href="registry.html"><img src="images/registryButton.png" alt="Registry" /></a>
     </nav>
   </div>
-  <script>new Image().src = 'images/registry_page.png';</script>
+  <script>
+    ['images/registry_page.png','images/amazonRegistryButton.png','images/targetRegistryButton.png']
+      .forEach(src => new Image().src = src);
+  </script>
 </body>
 </html>

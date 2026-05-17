@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lexi's Registry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -36,22 +35,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
-      white-space: nowrap;
+      gap: 2vh;
     }
 
-    .registry-links a {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #6ab0e0;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      text-align: center;
+    .registry-links a img {
+      height: 8vh;
+      width: auto;
+      display: block;
+      opacity: 1;
+      transition: opacity 0.15s;
     }
 
-    .registry-links a:hover {
-      text-decoration: underline;
+    .registry-links a:hover img {
+      opacity: 0.75;
     }
   </style>
 </head>
@@ -59,8 +55,12 @@
   <div class="card">
     <img class="card-img" src="images/registry_page.png" alt="Registry" />
     <div class="registry-links">
-      <a href="https://www.amazon.com/wedding/guest-view/2X91PQO64QI1T" target="_blank" rel="noopener">Amazon Registry</a>
-      <a href="https://www.target.com/gift-registry/gift/lexi-and-corbin" target="_blank" rel="noopener">Target Registry</a>
+      <a href="https://www.amazon.com/wedding/guest-view/2X91PQO64QI1T" target="_blank" rel="noopener">
+        <img src="images/amazonRegistryButton.png" alt="Amazon Registry" />
+      </a>
+      <a href="https://www.target.com/gift-registry/gift/lexi-and-corbin" target="_blank" rel="noopener">
+        <img src="images/targetRegistryButton.png" alt="Target Registry" />
+      </a>
     </div>
   </div>
 </body>
