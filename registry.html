@@ -13,17 +13,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      padding: 8px;
     }
 
     .card {
       position: relative;
-      height: 100vh;
+      width: min(calc(100vw - 16px), calc((100vh - 16px) * 1429 / 2000));
+      aspect-ratio: 1429 / 2000;
     }
 
     .card-img {
+      width: 100%;
       height: 100%;
-      width: auto;
       display: block;
     }
 
