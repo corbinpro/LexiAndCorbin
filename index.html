@@ -37,10 +37,16 @@
       align-items: center;
     }
 
+    .links a {
+      border-radius: 12px;
+      display: inline-block;
+    }
+
     .links a img {
       height: 6vh;
       width: auto;
       display: block;
+      border-radius: 12px;
       opacity: 1;
       transition: opacity 0.15s;
     }
@@ -61,6 +67,18 @@
   <script>
     ['images/registry_page.png','images/amazonRegistryButton.png','images/targetRegistryButton.png']
       .forEach(src => new Image().src = src);
+
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ghost-pulse {
+        0%   { box-shadow: 0 0 0 0 rgba(106,176,224,0.7); }
+        70%  { box-shadow: 0 0 0 10px rgba(106,176,224,0); }
+        100% { box-shadow: 0 0 0 0 rgba(106,176,224,0); }
+      }
+      .pulse { animation: ghost-pulse 2s ease-out infinite; }
+    `;
+    document.head.appendChild(style);
+    document.querySelectorAll('.links a').forEach(el => el.classList.add('pulse'));
   </script>
 </body>
 </html>
