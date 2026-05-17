@@ -34,20 +34,18 @@
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 4%;
+      gap: 1.5rem;
       align-items: center;
-      width: 70%;
     }
 
     .links a {
       border-radius: 12px;
       display: inline-block;
-      flex: 1;
     }
 
     .links a img {
-      width: 100%;
-      height: auto;
+      height: 6vh;
+      width: auto;
       display: block;
       border-radius: 12px;
       opacity: 1;
@@ -56,6 +54,11 @@
 
     .links a:hover img {
       opacity: 0.75;
+    }
+
+    @media (max-width: 600px) {
+      .links a img { height: 3vh; }
+      .links { gap: 0.75rem; }
     }
   </style>
 </head>
