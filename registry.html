@@ -9,35 +9,35 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      min-height: 100vh;
+      height: 100vh;
       background-color: #fef9e7;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
+      overflow: hidden;
     }
 
     .card {
       position: relative;
-      width: 100%;
-      max-width: 420px;
+      height: 100vh;
     }
 
     .card-img {
-      width: 100%;
+      height: 100%;
+      width: auto;
       display: block;
     }
 
     .registry-links {
       position: absolute;
-      top: 35%;
-      left: 12%;
-      right: 12%;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
+      white-space: nowrap;
     }
 
     .registry-links a {
