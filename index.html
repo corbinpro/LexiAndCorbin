@@ -3,88 +3,269 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lexi's Bridal Shower</title>
+  <title>Lexi & Corbin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:wght@300;400;600&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      height: 100vh;
-      background-color: #fef9e7;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: #fff;
+    }
+
+    /* ── Shared section patterns ── */
+    .section-photo {
+      position: relative;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px;
+      background-size: cover;
+      background-position: center;
     }
 
-    .card {
-      position: relative;
-      width: min(calc(100vw - 16px), calc((100vh - 16px) * 1429 / 2000));
-      aspect-ratio: 1429 / 2000;
-    }
-
-    .invitation-img {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    .links {
+    .section-photo::after {
+      content: '';
       position: absolute;
-      bottom: 14%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
+      inset: 0;
+      background: rgba(0,0,0,0.38);
     }
 
-    .links a {
-      border-radius: 12px;
-      display: inline-block;
+    .section-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      max-width: 640px;
+      width: 100%;
     }
 
-    .links a img {
-      height: 6vh;
-      width: auto;
+    h1, h2 {
+      font-family: 'Cormorant Garant', serif;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Hero ── */
+    #hero {
+      background-image: url('images/engagement_photos/IMG_3171.JPG');
+      min-height: 100vh;
+    }
+
+    #hero::after {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.50) 100%);
+    }
+
+    .hero-names {
+      font-size: clamp(3rem, 12vw, 7rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .hero-date {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.9rem, 3vw, 1.2rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 3rem;
+    }
+
+    .scroll-hint {
       display: block;
-      border-radius: 12px;
-      opacity: 1;
-      transition: opacity 0.15s;
+      font-size: 1.6rem;
+      opacity: 0.6;
+      animation: bob 2s ease-in-out infinite;
     }
 
-    .links a:hover img {
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+
+    /* ── Reception ── */
+    #reception {
+      background-image: url('images/engagement_photos/IMG_3138.JPG');
+      min-height: 80vh;
+    }
+
+    .reception-heading {
+      font-size: clamp(2rem, 7vw, 3.5rem);
+      margin-bottom: 2rem;
+    }
+
+    .reception-details {
+      list-style: none;
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      line-height: 2.2;
+      letter-spacing: 0.08em;
+    }
+
+    .reception-details li + li {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .detail-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    /* ── Registry ── */
+    #registry {
+      background-color: #2c3e30;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #registry .section-content {
+      color: #f5f0e8;
+    }
+
+    .registry-heading {
+      font-size: clamp(2rem, 7vw, 3.5rem);
+      margin-bottom: 0.5rem;
+      color: #f5f0e8;
+    }
+
+    .registry-subline {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .registry-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border: 1px solid #f5f0e8;
+      color: #f5f0e8;
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+      border-radius: 2px;
+    }
+
+    .btn:hover {
+      background: rgba(245,240,232,0.15);
+    }
+
+    /* ── RSVP ── */
+    #rsvp {
+      background-image: url('images/engagement_photos/IMG_3084.JPG');
+      min-height: 70vh;
+    }
+
+    .rsvp-heading {
+      font-size: clamp(2.5rem, 10vw, 5rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .rsvp-subline {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       opacity: 0.75;
+      margin-bottom: 2.5rem;
     }
 
+    .btn-light {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .btn-light:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ── Mobile ── */
     @media (max-width: 600px) {
-      .links a img { height: 3.5vh; }
-      .links { gap: 0.75rem; }
+      .registry-buttons { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 280px; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img class="invitation-img" src="images/80percent.png" alt="Lexi's Bridal Shower Invitation" />
-    <nav class="links">
-      <a href="https://forms.gle/5W6Cj3sw5gh5LLfb6"><img src="images/RSVPbutton.png" alt="RSVP" /></a>
-      <a href="registry.html"><img src="images/registryButton.png" alt="Registry" /></a>
-    </nav>
-  </div>
-  <script>
-    ['images/registry_page.png','images/amazonRegistryButton.png','images/targetRegistryButton.png']
-      .forEach(src => new Image().src = src);
 
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ghost-pulse {
-        0%   { box-shadow: 0 0 0 0 rgba(106,176,224,0.7); }
-        70%  { box-shadow: 0 0 0 10px rgba(106,176,224,0); }
-        100% { box-shadow: 0 0 0 0 rgba(106,176,224,0); }
-      }
-      .pulse { animation: ghost-pulse 2s ease-out infinite; }
-    `;
-    document.head.appendChild(style);
-    document.querySelectorAll('.links a').forEach(el => el.classList.add('pulse'));
-  </script>
+  <!-- HERO -->
+  <section class="section-photo" id="hero">
+    <div class="section-content">
+      <h1 class="hero-names">Lexi<br>&amp; Corbin</h1>
+      <p class="hero-date">XX · XX · XX</p>
+      <span class="scroll-hint">&#8964;</span>
+    </div>
+  </section>
+
+  <!-- RECEPTION -->
+  <section class="section-photo" id="reception">
+    <div class="section-content">
+      <h2 class="reception-heading">Join Us for the Reception</h2>
+      <ul class="reception-details">
+        <li>
+          <span class="detail-label">Date</span>
+          XX-XX-XX
+        </li>
+        <li>
+          <span class="detail-label">Time</span>
+          XX:XX XX
+        </li>
+        <li>
+          <span class="detail-label">Venue</span>
+          XXXXXXXXXX
+        </li>
+        <li>
+          <span class="detail-label">Address</span>
+          XXXXXXXXXX
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- REGISTRY -->
+  <section id="registry">
+    <div class="section-content">
+      <h2 class="registry-heading">Registry</h2>
+      <p class="registry-subline">We&rsquo;d love your presence &mdash; but if you&rsquo;d like to give a gift</p>
+      <div class="registry-buttons">
+        <a class="btn" href="https://www.amazon.com/wedding/guest-view/2X91PQO64QI1T" target="_blank" rel="noopener">Amazon</a>
+        <a class="btn" href="https://www.target.com/gift-registry/gift/lexi-and-corbin" target="_blank" rel="noopener">Target</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="section-photo" id="rsvp">
+    <div class="section-content">
+      <h2 class="rsvp-heading">RSVP</h2>
+      <p class="rsvp-subline">Please respond by XX-XX-XX</p>
+      <a class="btn btn-light" href="#">RSVP Now</a>
+    </div>
+  </section>
+
 </body>
 </html>
