@@ -55,18 +55,18 @@
     #hero {
       background-image: url('images/engagement_photos/IMG_3115.JPG');
       background-color: #1e2b20;
-      background-size: cover;
+      background-size: 110% auto;
       background-position: center 38%;
       min-height: 100vh;
       align-items: flex-end;
     }
 
     #hero::after {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.60) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 100%);
     }
 
     #hero .section-content {
-      padding-bottom: 4rem;
+      margin-bottom: 12vh;
     }
 
     .hero-names {
@@ -192,11 +192,25 @@
       background-size: cover;
       background-position: center 22%;
       min-height: 70vh;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 1.5rem;
+    }
+
+    #rsvp::after {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.10) 40%, rgba(0,0,0,0.45) 100%);
+    }
+
+    .rsvp-top, .rsvp-bottom {
+      position: relative;
+      z-index: 1;
+      text-align: center;
     }
 
     .rsvp-heading {
       font-size: clamp(2.5rem, 10vw, 5rem);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .rsvp-subline {
@@ -204,7 +218,6 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       opacity: 0.75;
-      margin-bottom: 2.5rem;
     }
 
     .btn-light {
@@ -273,9 +286,11 @@
 
   <!-- RSVP -->
   <section class="section-photo" id="rsvp">
-    <div class="section-content">
+    <div class="rsvp-top">
       <h2 class="rsvp-heading">RSVP</h2>
       <p class="rsvp-subline">Please respond by XX-XX-XX</p>
+    </div>
+    <div class="rsvp-bottom">
       <a class="btn btn-light" href="#">RSVP Now</a>
     </div>
   </section>
