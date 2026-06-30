@@ -27,6 +27,7 @@
       justify-content: center;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
     }
 
     .section-photo::after {
@@ -58,15 +59,10 @@
       background-size: 110% auto;
       background-position: center 38%;
       min-height: 100vh;
-      align-items: flex-end;
     }
 
     #hero::after {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 100%);
-    }
-
-    #hero .section-content {
-      margin-bottom: 12vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%);
     }
 
     .hero-names {
@@ -233,6 +229,17 @@
     @media (max-width: 600px) {
       .registry-buttons { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 280px; text-align: center; }
+
+      /* Hero: zoom in so image is taller than viewport (no tiling),
+         shift position so faces land near the top, text follows below */
+      #hero {
+        background-size: 200% auto;
+        background-position: center 84%;
+        align-items: flex-start;
+      }
+      #hero .section-content {
+        padding-top: 24vh;
+      }
     }
   </style>
 </head>
